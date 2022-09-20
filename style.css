@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+:root {
+    --index: calc(1vw+1vh);
+}
 .parallax__image {
     height: 100vh;
     background-attachment: fixed;
@@ -43,6 +46,7 @@
     letter-spacing: 10px;
      color: #373636;
     background-color: rgba(255, 255, 255, 0.6);
+    font-size: calc(var(--index)*2.5);
 }
 
 
