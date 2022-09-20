@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.parallax__image {
+    height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.parallax__image:nth-child(1) {
+    background-image: url(img/winter.jpg);
+}
+
+.parallax__image:nth-child(2) {
+    background-image: url(img/spring.jpg);
+}
+
+.parallax__image:nth-child(3) {
+    background-image: url(img/summer.jpg);
+}
+
+.parallax__image:nth-child(4) {
+    background-image: url(img/autumn.jpg);
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 25px;
+    position: relative;
+    padding: 10px;
+    padding-left: 19px;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    transform: translate(-50%, -50%);
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+     color: #373636;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+
