@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+width: 100%;
+font-family: 'Roboto', sans-serif;;
+}
+
+.main__container {
+display: flex;
+}
+
+.container__menu{
+display: fixed;
+min-width: 250px;
+padding-left: 20px;
+padding-top: 20px;
+background-color: rgba(228, 228, 228, 0.979);
+height: relative;
+border-right: 3px solid rgb(215, 210, 210);
+}
+
+h3 {
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    padding-bottom: 12px;
+}
+
+h2 {
+   padding-top: 10px;
+}
+
+.first {
+ padding-top: 0;
+}
+
+ul .menu {
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+li {
+    padding-top: 15px;
+    color: black;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+
+}
+
+hr {
+   padding-top: 15px;
+    margin-left: -20px;
+    
+}
+
+.cantainer__content {
+margin-left: 30px;
+margin-right: 20px;
+padding-top: 20px;
+}
+
+p {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.name {
+    font-style: italic;
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
+.last {
+    padding-bottom: 50px;
+}
+
+.properties {
+    display: list-item;
+    padding-left: 10px;
+}
+
+ul li.properties::marker {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+li.properties {
+    margin-top: 6px;
+    margin-left: 12px;
+    margin-bottom: 10px;
+}
+ul.menu {
+    list-style: none;
+  }
+.link {
+    background-color:rgba(228, 228, 228, 0.979);
+    letter-spacing: 1.5px;
+    font-size: 15px;
+    padding-left: 20px;
+    line-height: 15px;
+}
