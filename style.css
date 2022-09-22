@@ -29,7 +29,7 @@
     background-image: url(img/autumn.jpg);
 }
 .header {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     line-height: 25px;
@@ -41,12 +41,12 @@
     width: 200px;
     transform: translate(-50%, -50%);
     font-family: 'Raleway', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 10px;
      color: #373636;
     background-color: rgba(255, 255, 255, 0.6);
-    font-size: calc(var(--index)*2.5);
+    font-size: calc(var(--index)*1.5);
 }
 
 
