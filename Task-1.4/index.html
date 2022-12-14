@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Userform</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    </head>
+    <body>
+        <form action="#" method="post" enctype="multipart/form-data">
+        <header class="header">
+            <div class="container__header">
+                <div class="header__wrapper">
+                    <div class="header__title">Create Account
+                </div>
+              </div>
+            </div>
+        </header>
+        <main>
+           <div class="container__form">
+                    <div class="form__item">  
+                         <div>
+                             <label for="first_name" class="overlabel"> First name*</label>
+                             <input class="block__style" placeholder="enter your first name" tabindex="1" name="username" type="text" />
+                         </div>  
+                        <div>
+                             <label for="second_name" class="overlabel"> Second name</label>
+                            <input class="block__style" placeholder="enter your second name" tabindex="2" name="usersurname" type="text" />
+                         </div> 
+                     </div>  
+                    <div class="E-Mail" > 
+                        <p>Email*</p>
+                        <input class="block__style" placeholder="enter your email" tabindex="3" name="email" type="email" />
+                    </div>                
+                     <div class="form__item">  
+                        <div> 
+                            <label for="password" class="overlabel"> Password</label>
+                            <input class="block__style" placeholder="enter your password" tabindex="4" name="userpass" type="password" />
+                         </div> 
+                         <div>
+                            <label for="confim__password" class="overlabel">Confim password</label>
+                             <input class="block__style" placeholder="enter your password again" tabindex="5" name="userpasscon" type="password" /> 
+                        </div> 
+                    
+                    </div> 
+                    <div class="form__item"> 
+                     <div class="gender__block"> 
+                <label for="gender" class="overlabel">Gender</label> 
+                  <div class="gender__item">
+                    <input type="radio" id="male" name="gender" value="Male" tabindex="6" />
+                    <label class="gender__label" for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female" tabindex="6"/>
+                    <label class="gender__label" for="female">Female</label>
+                </div> 
+            </div> 
+             <div class="checkbox__block">
+                <label for="checkbox" class="overlabel">Hobies</label>
+                <div class="checkbox__item">
+                   <input tabindex="7"  type="checkbox" id="Music" name="music" value="Music" >
+                   <label class="checkbox__label" for="Music"> Music </label>
+                   <input class="checkbox__label" id="Sports" tabindex="8"  type="checkbox" name="sports" value=" Sports " >
+                   <label class="checkbox__label" for="Sports"> Sports </label> 
+                   <input class="checkbox__label" id="Travel" tabindex="9"  type="checkbox" name="travel" value="Travel" >
+                   <label class="checkbox__label" for="Travel"> Travel </label>  
+                   <input class="checkbox__label" id="Movies" tabindex="10"  type="checkbox" name="movies" value="Movies"> 
+                   <label class="checkbox__label" for="Movies"> Movies </label>  
+                </div>
+             </div>
+                    </div>  
+                    <div class="form__item">   
+            <div class="container__source">
+                <label for="sourse" class="overlabel"> Source of income</label>
+                <select class="block__style" tabindex="11" name="source">
+                    <option value="employed">Employed</option>
+                    <option value="unemployed">Unmployed</option>
+                    <option value="student">Student</option>
+                </select>
+    </div> 
+       <div class="income__block">
+        <label for="income" class="overlabel"> Income</label> 
+        <div class="income__item">
+            <form action="">
+                <input type="range" id="income" min="0" max="20" value="0" oninput="amount.value=this.value" />
+                <output for="income" name="amount">0</output><h5>K</h5>
+            </form>
+        </div>
+       <div class="rectangle"></div>
+    </div> 
+                   </div> 
+                   <div class="form__item">  
+                         <div class="upload__block">
+                             <label for="upload" class="overlabel"> Upload Profile Picture</label>
+                             <div class="upload__item">
+                             <input tabindex="13" class="file__input" tabindex="9" type="file" name="userfoto">
+                         </div>  
+                        </div>
+                        <div class="age__block">
+                             <label for="age" class="overlabel"> Age</label>
+                             <div class="age__item">
+                             <input tabindex="14" class="block__style" tabindex="3" name="userphone" type="number" />
+                         </div> 
+                        </div>
+                   </div>                   
+                   <div class="container__bio">
+         <p>Bio</p>
+         <textarea tabindex="15" class="block__style" tabindex="8" name="text" ></textarea>
+                   </div>  
+            </div>
+        </main> 
+        <footer class="footer">
+                <div class="container__footer">
+                    <div class="footer__wrapper">
+                        <div>
+                            <button class="button__create" type="submit">Create</button>
+                        </div>
+                    </div>
+                  </div>
+              
+        </footer>
+         </form>   
+    </body>
+</html>
