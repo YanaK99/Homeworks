@@ -1,0 +1,17 @@
+.checkbox-block {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 10px;
+}
+
+#msform input[type="checkbox"] {
+    width: 10%;
+}
+
+.person-data > p {
+    margin-bottom: 20px;
+}
+
+.person-title {
+    margin-bottom: 25px;
+}
