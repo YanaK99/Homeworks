@@ -2,8 +2,7 @@ import { Card, CardContent } from "@mui/material";
 
 import { Box } from "@mui/system";
 
-import { Input } from "../../components/Input";
-import { Title } from "../../components/Title";
+import { Input, Title } from "../../components";
 
 /**
  *

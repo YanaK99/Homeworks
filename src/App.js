@@ -1,15 +1,13 @@
 import { createTheme, ThemeProvider, Container } from "@mui/material";
-import React, { useContext, useMemo } from "react";
+
+import { useContext, useMemo } from "react";
 
 import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
 
-import { AppBar } from "./components/AppBar";
 import AccountContext from "./context/AccountContext";
-import { AboutUs } from "./pages/AboutUs";
-import { Dashboard } from "./pages/Dashboard";
-import { ErrorPage } from "./pages/ErrorPage";
-import { Homepage } from "./pages/Homepage";
-import { Login } from "./pages/Login";
+
+import { AppBar } from "components";
+import { AboutUs, Dashboard, ErrorPage, Homepage, Login } from "pages";
 
 /**
  *
