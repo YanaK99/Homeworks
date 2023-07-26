@@ -1,15 +1,17 @@
+import ClearIcon from "@mui/icons-material/Clear";
 import MenuIcon from "@mui/icons-material/Menu";
-import { createTheme, ThemeProvider } from "@mui/material";
+
+import { Divider, Drawer, List, ListItem, ListItemText } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { Sidenav } from "./styled";
+import AccountContext from "../../context/AccountContext";
 
 /**
  *
@@ -17,20 +19,20 @@ import { Sidenav } from "./styled";
  * @param root0.setIsAuthorized
  * @param root0.isAuthorized
  */
-export default function ButtonAppBar({ setIsAuthorized, isAuthorized }) {
+export default function ButtonAppBar() {
+    const { isAuthorized, logout: logoutUser } = useContext(AccountContext);
     const buttonName = isAuthorized ? "Logout" : "Login";
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
-    const loginOrLogout = () => {
-        if (isAuthorized) {
-            localStorage.removeItem("user");
-            setIsAuthorized(false);
-            navigate("/");
-            return;
-        }
-        navigate("/login");
+
+    const logout = () => {
+        logoutUser();
+        navigate("/");
     };
 
+    const login = () => {
+        navigate("/login");
+    };
     const openNav = () => {
         setIsOpen(true);
     };
@@ -38,55 +40,53 @@ export default function ButtonAppBar({ setIsAuthorized, isAuthorized }) {
     const closeNav = () => {
         setIsOpen(false);
     };
-
-    const darkTheme = createTheme({
-        palette: {
-            mode: "dark",
-            primary: {
-                main: "#1976d2",
-            },
-        },
-    });
-
+    const style = {
+            width: "20vw",
+            maxWidth: 500,
+            backgroundColor: "rgb(58,82,58)",
+    };
     return (
-        <ThemeProvider theme={darkTheme}>
+        <div>
+            <Drawer open={isOpen} onClose={closeNav}>
+                <List sx={style} component="nav" aria-label="mailbox folders">
+                    <ListItem sx={{ justifyContent: "flex-end", cursor: "pointer" }}>
+                        <ClearIcon onClick={closeNav} />
+                    </ListItem>
+                    <Divider />
+                    <ListItem button onClick={() => navigate("/")}>
+                        <ListItemText primary="Logo" />
+                    </ListItem>
+                    <Divider />
+                    <ListItem button onClick={() => navigate("/about-us")}>
+                        <ListItemText primary="About Us" />
+                    </ListItem>
+                    {isAuthorized && (
+                        <ListItem button onClick={() => navigate("/dashboard")}>
+                            <ListItemText primary="Dashboard" />
+                        </ListItem>
+                    )}
+                </List>
+            </Drawer>
             <AppBar position="static">
                 <Toolbar>
-                    {isOpen ? (
-                        <Sidenav>
-                            <li>
-                                <span onClick={closeNav}>&times;</span>
-                            </li>
-                            <li>
-                                <NavLink to="/">Logo</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/about-us">About Us</NavLink>
-                            </li>
-                            {isAuthorized &&
-                            (
-                                <li>
-                                    <NavLink to="/dashboard">Dashboard</NavLink>
-                                </li>
-                            )}
-                        </Sidenav>
-                    ) : (
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{ mr: 2 }}
-                        onClick={openNav}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-)}
+                    {!isOpen && (
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{ mr: 2 }}
+                            onClick={openNav}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                    )}
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} />
-                    <Button color="inherit" onClick={loginOrLogout}>{buttonName}
+                    <Button color="inherit" onClick={isAuthorized ? logout : login}>
+                        {buttonName}
                     </Button>
                 </Toolbar>
             </AppBar>
-        </ThemeProvider>
+        </div>
     );
 }

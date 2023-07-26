@@ -1,42 +1,44 @@
+import { Button, TextField } from "@mui/material";
+import { Box } from "@mui/system";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import {
-    Button,
-    FormContent,
-    FormField,
-    MainInputField,
-    NameLabel,
-    PassField,
-    PassLabel
-
-} from "./styled";
+import AccountContext from "../../context/AccountContext";
 
 /**
  *
  * @param root0
  * @param root0.setIsAuthorized
  */
-function Input({ setIsAuthorized }) {
+function Input() {
+    const { login: loginUser } = useContext(AccountContext);
     const navigate = useNavigate();
+
     const login = () => {
-        localStorage.setItem("user", true);
-        setIsAuthorized(true);
+        loginUser();
         navigate("/");
     };
-  return <MainInputField>
-            <FormContent>
-                <NameLabel htmlFor="">
-                    Name
-                </NameLabel>
-                <FormField type="text" id="name" name="name" />
-                <PassLabel className="pass_label" htmlFor="">
-                    Password
-                </PassLabel>
-                <PassField type="password" id="password" name="password" />
-                <Button onClick={login}>Login
-                </Button>
-            </FormContent>
-         </MainInputField>;
+
+    return (
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            <TextField label="Name" variant="standard" id="name" name="name" />
+            <TextField label="Password" variant="standard" type="password" id="password" name="password" />
+            <Button
+                variant="contained"
+                onClick={login}
+                sx={{
+                    backgroundColor: "#fff",
+                    color: "#000",
+                    "&:hover": {
+                        backgroundColor: "#4caf50",
+                        color: "#fff",
+                    },
+            }}
+            >
+                Login
+            </Button>
+        </Box>
+    );
 }
 
 export default Input;
